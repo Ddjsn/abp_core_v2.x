@@ -8,7 +8,7 @@ using Abp.Timing;
 namespace abp_core_v2.x.Tasks
 {
     [Table("AppTasks")]
-    public class Task : Entity, IHasCreationTime
+    public class AppTask : Entity, IHasCreationTime
     {
         public const int MaxTitleLength = 256;
         public const int MaxDescriptionLength = 64 * 1024; //64KB
@@ -24,13 +24,13 @@ namespace abp_core_v2.x.Tasks
 
         public TaskState State { get; set; }
 
-        public Task()
+        public AppTask()
         {
             CreationTime = Clock.Now;
             State = TaskState.Open;
         }
 
-        public Task(string title, string description = null)
+        public AppTask(string title, string description = null)
             : this()
         {
             Title = title;

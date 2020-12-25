@@ -14,7 +14,7 @@ namespace abp_core_v2.x
         public TaskState? State { get; set; }
     }
 
-    [AutoMapFrom(typeof(Task))]
+    [AutoMapFrom(typeof(AppTask))]
     public class TaskListDto : EntityDto, IHasCreationTime
     {
         public string Title { get; set; }
